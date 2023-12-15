@@ -1,0 +1,12 @@
+#!/bin/bash
+
+extract_urls() {
+    local file_path="$1"  # Capture the file path passed as a parameter.
+    grep -oE --no-filename 'http[s]?://[^ ]+' "$file_path" > URLFILE.txt
+
+    echo "URLs extracted from $file_path and saved to urls.txt"
+}
+
+
+
+extract_urls "FILE/FOLDER GOES HERE"
